@@ -13,10 +13,33 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>springbootdemo</name>
 	<description>Demo project for Spring Boot</description>
+
 	<properties>
+		<encoding>UTF-8</encoding>
 		<java.version>17</java.version>
+        <!--for maven-->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<maven.compiler.target>17</maven.compiler.target>
+		<maven.compiler.source>17</maven.compiler.source>
 	</properties>
+
 	<dependencies>
+
+		<!-- swagger open-api-3.0 -->
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-ui</artifactId>
+			<version>1.6.15</version>
+		</dependency>
+		<!--modelmapper-->
+		<dependency>
+			<groupId>org.modelmapper</groupId>
+			<artifactId>modelmapper</artifactId>
+			<version>3.1.1</version>
+		</dependency>
+
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
@@ -85,6 +108,13 @@
 
 	<build>
 		<plugins>
+			<!--docker-->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version> 3.3.1</version>
+			</plugin>
+
 			<plugin>
 				<groupId>org.hibernate.orm.tooling</groupId>
 				<artifactId>hibernate-enhance-maven-plugin</artifactId>
